@@ -1,0 +1,44 @@
+{
+  "name": "puppetlabs-rkt",
+  "version": "0.1.0",
+  "author": "Puppet Labs",
+  "summary": "Installs, configures, and manages the rkt container runtime.",
+  "license": "Apache-2.0",
+  "source": "git://github.com/puppetlabs/puppetlabs-rkt.git",
+  "project_page": "https://github.com/puppetlabs/puppetlabs-rkt",
+  "issues_url": "git://github.com/puppetlabs/puppetlabs-rkt/issues",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.1.0"},
+    {"name":"camptocamp/archive","version_requirement":">= 0.8.1"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.7.0 < 2016.1.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.0 < 5.0.0"
+    }
+  ]
+}
