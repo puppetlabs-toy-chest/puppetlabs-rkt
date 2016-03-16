@@ -11,6 +11,7 @@
     {"name":"puppetlabs/stdlib","version_requirement":">= 4.1.0"},
     {"name":"camptocamp/archive","version_requirement":">= 0.8.1"}
   ],
+  "data_provider": null,
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
