@@ -15,13 +15,13 @@ matrix:
     env: PUPPET_GEM_VERSION="~> 3.0"
   - rvm: 1.9.3
     env: PUPPET_GEM_VERSION="~> 3.0"
-  - rvm: default
+  - rvm: 2.1.6
     sudo: required
     dist: trusty
     services: docker
     env: BEAKER_set="ubuntu-14.04"
     script: bundle exec rake beaker
-  - rvm: default
+  - rvm: 2.1.6
     sudo: required
     dist: trusty
     services: docker
