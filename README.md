@@ -8,7 +8,7 @@ Status](https://secure.travis-ci.org/puppetlabs/puppetlabs-rkt.png)](http://trav
 2. [Module Description - What the module does and why it is
    useful](#module-description)
 3. [Setup - The basics of getting started with rkt](#setup)
-3. [Usage - Configuration options and additional functionality](#setup)
+4. [Usage - Configuration options and additional functionality](#setup)
 
 ## Overview
 
@@ -60,3 +60,7 @@ rkt_pod { 'c8ecd9ae':
   image_name => 'hello',
 }
 ```
+
+## Maintainers
+
+This module is maintained by: Gareth Rushgrove <gareth@puppet.com>
