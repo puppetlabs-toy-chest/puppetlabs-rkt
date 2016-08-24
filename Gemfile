@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 group :test do
   gem 'rake'
-  gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '~> 4.3.0'
-  gem 'rspec', '< 3.2.0'
+  gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '~> 4.6.0'
+  gem 'rspec'
   gem 'puppetlabs_spec_helper'
   gem 'metadata-json-lint'
   gem 'rspec-puppet-facts'
-  gem 'rubocop', '0.33.0'
+  gem 'rubocop'
   gem 'simplecov'
   gem 'simplecov-console'
 
@@ -24,6 +24,7 @@ group :development do
   gem 'travis-lint'
   gem 'puppet-blacksmith'
   gem 'guard-rake'
+  gem 'listen', '<3.1'
 end
 
 group :acceptance do
