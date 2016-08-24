@@ -19,7 +19,7 @@ class rkt::acbuild(
   validate_string($version)
   validate_re($ensure, '^(present|absent)$')
 
-  archive { 'acbuild':
+  archive { "acbuild-v${version}":
     ensure           => $ensure,
     target           => '/usr/local/src',
     checksum         => false,
@@ -37,18 +37,18 @@ class rkt::acbuild(
   file { '/usr/local/bin/acbuild':
     ensure  => $file_ensure,
     target  => "/usr/local/src/acbuild-v${version}/acbuild",
-    require => Archive['acbuild'],
+    require => Archive["acbuild-v${version}"],
   }
 
   file { '/usr/local/bin/acbuild-script':
     ensure  => $file_ensure,
     target  => "/usr/local/src/acbuild-v${version}/acbuild-script",
-    require => Archive['acbuild'],
+    require => Archive["acbuild-v${version}"],
   }
 
   file { '/usr/local/bin/acbuild-chroot':
     ensure  => $file_ensure,
     target  => "/usr/local/src/acbuild-v${version}/acbuild-chroot",
-    require => Archive['acbuild'],
+    require => Archive["acbuild-v${version}"],
   }
 }
