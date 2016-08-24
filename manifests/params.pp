@@ -3,7 +3,7 @@
 # Settings for the rkt module
 #
 class rkt::params {
-  $version = '1.1.0'
-  $acbuild_version = '0.2.2'
+  $version = '1.13.0'
+  $acbuild_version = '0.4.0'
   $ensure = 'present'
 }
