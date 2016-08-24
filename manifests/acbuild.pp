@@ -25,7 +25,7 @@ class rkt::acbuild(
     checksum         => false,
     follow_redirects => true,
     src_target       => '/usr/local/src',
-    url              => "https://github.com/appc/acbuild/releases/download/v${version}/acbuild.tar.gz",
+    url              => "https://github.com/appc/acbuild/releases/download/v${version}/acbuild-v${version}.tar.gz",
   }
 
   if $ensure == 'present' {
@@ -36,7 +36,19 @@ class rkt::acbuild(
 
   file { '/usr/local/bin/acbuild':
     ensure  => $file_ensure,
-    target  => '/usr/local/src/acbuild',
+    target  => "/usr/local/src/acbuild-v${version}/acbuild",
+    require => Archive['acbuild'],
+  }
+
+  file { '/usr/local/bin/acbuild-script':
+    ensure  => $file_ensure,
+    target  => "/usr/local/src/acbuild-v${version}/acbuild-script",
+    require => Archive['acbuild'],
+  }
+
+  file { '/usr/local/bin/acbuild-chroot':
+    ensure  => $file_ensure,
+    target  => "/usr/local/src/acbuild-v${version}/acbuild-chroot",
     require => Archive['acbuild'],
   }
 }

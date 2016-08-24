@@ -12,10 +12,12 @@ describe 'rkt::acbuild' do
       it { should contain_package('curl') }
       it { should contain_archive('acbuild').with_ensure('present') }
 
-      it do
-        should contain_file('/usr/local/bin/acbuild')
-          .with_target('/usr/local/src/acbuild')
-          .with_ensure('link')
+      ['acbuild', 'acbuild-script', 'acbuild-chroot'].each do |script|
+        it do
+          should contain_file("/usr/local/bin/#{script}")
+            .with_target("/usr/local/src/acbuild-v0.4.0/#{script}")
+            .with_ensure('link')
+        end
       end
 
       context 'with a custom version' do

@@ -11,11 +11,11 @@ describe 'rkt' do
       it { should contain_package('curl') }
       it { should contain_group('rkt') }
 
-      it { should contain_archive('rkt-v1.1.0').with_ensure('present') }
+      it { should contain_archive('rkt-v1.13.0').with_ensure('present') }
 
       it do
         should contain_file('/usr/local/bin/rkt')
-          .with_target('/usr/local/src/rkt-v1.1.0/rkt')
+          .with_target('/usr/local/src/rkt-v1.13.0/rkt')
           .with_ensure('link')
       end
 
@@ -27,7 +27,7 @@ describe 'rkt' do
       context 'with ensure absent' do
         let(:params) { { 'ensure' => 'absent' } }
         it { should contain_file('/usr/local/bin/rkt').with_ensure('absent') }
-        it { should contain_archive('rkt-v1.1.0').with_ensure('absent') }
+        it { should contain_archive('rkt-v1.13.0').with_ensure('absent') }
       end
     end
   end
