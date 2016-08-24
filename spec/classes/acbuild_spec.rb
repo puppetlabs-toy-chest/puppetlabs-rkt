@@ -10,7 +10,7 @@ describe 'rkt::acbuild' do
       it { should contain_class('rkt::acbuild') }
       it { should contain_class('rkt::params') }
       it { should contain_package('curl') }
-      it { should contain_archive('acbuild').with_ensure('present') }
+      it { should contain_archive('acbuild-v0.4.0').with_ensure('present') }
 
       ['acbuild', 'acbuild-script', 'acbuild-chroot'].each do |script|
         it do
@@ -22,13 +22,13 @@ describe 'rkt::acbuild' do
 
       context 'with a custom version' do
         let(:params) { { 'version' => '1.0.0' } }
-        it { should contain_archive('acbuild').with_url(/v1\.0\.0/) }
+        it { should contain_archive('acbuild-v1.0.0').with_url(/v1\.0\.0/) }
       end
 
       context 'with ensure absent' do
         let(:params) { { 'ensure' => 'absent' } }
         it { should contain_file('/usr/local/bin/acbuild').with_ensure('absent') }
-        it { should contain_archive('acbuild').with_ensure('absent') }
+        it { should contain_archive('acbuild-v0.4.0').with_ensure('absent') }
       end
     end
   end
