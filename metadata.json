@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-rkt",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Puppet Labs",
   "summary": "Installs, configures, and manages the rkt container runtime.",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
   "requirements": [
     {
       "name": "pe",
-      "version_requirement": ">= 3.7.0 < 2016.1.0"
+      "version_requirement": ">= 3.7.0"
     },
     {
       "name": "puppet",
