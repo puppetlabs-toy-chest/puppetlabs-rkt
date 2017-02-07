@@ -25,7 +25,7 @@ class rkt::acbuild(
     checksum         => false,
     follow_redirects => true,
     src_target       => '/usr/local/src',
-    url              => "https://github.com/appc/acbuild/releases/download/v${version}/acbuild-v${version}.tar.gz",
+    url              => "https://github.com/containers/build/releases/download/v${version}/acbuild-v${version}.tar.gz",
   }
 
   if $ensure == 'present' {
